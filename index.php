@@ -50,12 +50,12 @@ function displaySortedFiles($files,$folder) {
 	}
 	echo "\t</ul>\n</ul>\n";
 }
-
+/* 
 function isort($a,$b){
 	if(ord(substr(strtolower($a),0,1)) == ord(substr(strtolower($b),0,1))) return 0;
 	return (ord(substr(strtolower($a),0,1)) < ord(substr(strtolower($b),0,1))) ? -1 : 1;
 } 
-	
+ */	
 ?>
 <html>
 <head>
