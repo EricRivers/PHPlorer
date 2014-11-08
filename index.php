@@ -47,7 +47,6 @@ function displaySortedFiles($files,$folder) {
 	sort($files);
 	foreach ($files as $aFile) {
 		echo "\t<li><a href=\"$folder/$aFile\" onFocus=\"if(this.blur)this.blur()\" target=\"_blank\"><img src=\"images/generic.gif\" border=\"0\"> ".urldecode($aFile)."</a><br>\n";
-		//echo "\t<li><a href=\"$folder/$aFile\" onFocus=\"if(this.blur)this.blur()\"><img src=\"images/generic.gif\" border=\"0\"> ".urldecode($aFile)."</a><br>\n";
 	}
 	echo "\t</ul>\n</ul>\n";
 }
