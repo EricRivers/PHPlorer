@@ -36,7 +36,6 @@ function displayCurrentFolder($folder) {
 function displaySortedFolders($folders,$folder) {
 	echo "<ul>\n";
 	sort($folders);
-	//usort($folders, "isort");
 	foreach ($folders as $aFolder) {
 		echo "<li><a href=\"".$_SERVER['PHP_SELF']."?newDir=$folder/$aFolder\" onFocus=\"if(this.blur)this.blur()\"><img src=\"images/folder-closed.gif\" border=\"0\"> <b>".urldecode($aFolder)."</b></a><br>\n";
 	}
@@ -46,7 +45,6 @@ function displaySortedFiles($files,$folder) {
 	echo "<br>\n";
 	echo "\t<ul>\n";
 	sort($files);
-	//usort($files, "isort");
 	foreach ($files as $aFile) {
 		echo "\t<li><a href=\"$folder/$aFile\" onFocus=\"if(this.blur)this.blur()\" target=\"_blank\"><img src=\"images/generic.gif\" border=\"0\"> ".urldecode($aFile)."</a><br>\n";
 		//echo "\t<li><a href=\"$folder/$aFile\" onFocus=\"if(this.blur)this.blur()\"><img src=\"images/generic.gif\" border=\"0\"> ".urldecode($aFile)."</a><br>\n";
