@@ -5,7 +5,6 @@ function scanFolder($folder) {
 	$files = array();
 	$directory = @opendir($folder);
 	while (false!=($file = @readdir($directory))) {
-#		if (!ereg("^\.",$file)) {
 		if (!preg_match("/^\./i",$file)) {
 			if (is_dir($folder."/".$file)) {
 				htmlspecialchars($folder);
