@@ -2,8 +2,6 @@
 
 class PHPlorer
 {
-	public $folder = "..";
-	
 	public function scanFolder($folder)
 	{
 		$folders = array();
@@ -15,31 +13,24 @@ class PHPlorer
 			{
 				if (is_dir($folder."/".$file))
 				{
-				htmlspecialchars($folder);
-				array_push($folders, urlencode($file));
-				} else
-				{
-				htmlspecialchars($file);
-				array_push($files, $file);
+					htmlspecialchars($folder);
+					array_push($folders, urlencode($file));
+				} else {
+					htmlspecialchars($file);
+					array_push($files, $file);
 				}
 			}
 		}
+		return $folders;
 	}
-	
 }
 
 $obj= new PHPlorer;
-
-echo $obj->folder."<br/>\n";
-
-foreach ($folders as $aFolder)
+$obj->scanFolder("..");
+foreach ($obj->scanFolder("..") as $folder)
 {
-	echo $aFolder."<br/>\n";
+	echo $folder . "<br/>\n";
 }
 
-foreach ($files as $aFile)
-{
-	echo $aFile."<br/>\n";
-}
 
 ?>
