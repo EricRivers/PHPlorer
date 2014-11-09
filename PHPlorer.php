@@ -21,15 +21,22 @@ class PHPlorer
 				}
 			}
 		}
-		return $folders;
+		$foldfiles = array($folders,$files);
+		return $foldfiles;
 	}
 }
 
 $obj= new PHPlorer;
 $obj->scanFolder("..");
-foreach ($obj->scanFolder("..") as $folder)
+$folders = $obj->scanFolder("..")[0];
+$files = $obj->scanFolder("..")[1];
+foreach ($folders as $folder)
 {
 	echo $folder . "<br/>\n";
+}
+foreach ($files as $file)
+{
+	echo $file . "<br/>\n";
 }
 
 
