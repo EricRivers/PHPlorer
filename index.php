@@ -29,7 +29,7 @@ function displayCurrentFolder($folder) {
 	} else {
 		$readable = str_replace("..", "../public_html", dirname(urldecode($folder)));
 		echo "<b>Current folder: ".str_replace("..", "../public_html", urldecode($folder))."</b><br><br>\n";
-		echo "<a href=\"".$_SERVER['PHP_SELF']."?newDir=".dirname($folder)."\" onFocus=\"if(this.blur)this.blur()\"><img src=\"images/folder-open.gif\" border=\"0\"> <b>".$readable."</b></a><br>\n";
+		echo "<a href=\"".$_SERVER['PHP_SELF']."?newDir=".dirname($folder)."\"><img src=\"images/folder-open.gif\" border=\"0\"> <b>".$readable."</b></a><br>\n";
 	}
 }
 
@@ -37,7 +37,7 @@ function displaySortedFolders($folders,$folder) {
 	echo "<ul>\n";
 	sort($folders);
 	foreach ($folders as $aFolder) {
-		echo "<li><a href=\"".$_SERVER['PHP_SELF']."?newDir=$folder/$aFolder\" onFocus=\"if(this.blur)this.blur()\"><img src=\"images/folder-closed.gif\" border=\"0\"> <b>".urldecode($aFolder)."</b></a><br>\n";
+		echo "<li><a href=\"".$_SERVER['PHP_SELF']."?newDir=$folder/$aFolder\"><img src=\"images/folder-closed.gif\" border=\"0\"> <b>".urldecode($aFolder)."</b></a><br>\n";
 	}
 }
 
@@ -46,7 +46,7 @@ function displaySortedFiles($files,$folder) {
 	echo "\t<ul>\n";
 	sort($files);
 	foreach ($files as $aFile) {
-		echo "\t<li><a href=\"$folder/$aFile\" onFocus=\"if(this.blur)this.blur()\" target=\"_blank\"><img src=\"images/generic.gif\" border=\"0\"> ".urldecode($aFile)."</a><br>\n";
+		echo "\t<li><a href=\"$folder/$aFile\" target=\"_blank\"><img src=\"images/generic.gif\" border=\"0\"> ".urldecode($aFile)."</a><br>\n";
 	}
 	echo "\t</ul>\n</ul>\n";
 }
