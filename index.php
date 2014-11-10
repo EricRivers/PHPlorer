@@ -1,29 +1,7 @@
 <?PHP
 
 require_once('classes/class.phplorer.php');
-/* 
-function scanFolder($folder) {
-	$folders = array();
-	$files = array();
-	$directory = @opendir($folder);
-	while (false!=($file = @readdir($directory))) {
-		if (!preg_match("/^\./i",$file)) {
-			if (is_dir($folder."/".$file)) {
-				htmlspecialchars($folder);
-				array_push($folders, urlencode($file));
-			} else {
-				htmlspecialchars($file);
-				array_push($files, $file);
-			}
-		}
-	}
-	
-	displayCurrentFolder($folder);
-	displaySortedFolders($folders,$folder);	
-	displaySortedFiles($files,$folder);
-	
-}
- */
+
 function displayCurrentFolder($folder) {
 	if ($folder == "..") {
 		echo "<b>Current folder: ../public_html</b><br><br>\n";
@@ -92,12 +70,7 @@ displayCurrentFolder($folder);
 displaySortedFolders($folders,$folder);	
 displaySortedFiles($files,$folder);
 
-/* if (isset($_GET['newDir'])) {
-	scanFolder($_GET['newDir']);
-} else {
-	scanFolder("..");
-}
- */?>
+?>
 </blockquote>
 </body>
 </html>
