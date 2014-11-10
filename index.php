@@ -61,7 +61,7 @@ $dirObj->scanFolder($folder);
 
 displayCurrentFolder($folder);
 displaySortedFolders(($dirObj->scanFolder($folder)[0]),$folder);	
-displaySortedFiles(($dirObj->scanFolder($folder)[0]),$folder);
+displaySortedFiles(($dirObj->scanFolder($folder)[1]),$folder);
 
 ?>
 </blockquote>
