@@ -50,45 +50,19 @@ function displaySortedFiles($files,$folder) {
 	}
 	echo "\t</ul>\n</ul>\n";
 }
-/* 
-function isort($a,$b){
-	if(ord(substr(strtolower($a),0,1)) == ord(substr(strtolower($b),0,1))) return 0;
-	return (ord(substr(strtolower($a),0,1)) < ord(substr(strtolower($b),0,1))) ? -1 : 1;
-} 
- */	
+
 ?>
+<!DOCTYPE HTML>
 <html>
 <head>
-<title>SiteMapper</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<style type="text/css">
-<!--
-BODY {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-a:link {
-	color: #FF0000;
-	text-decoration: none;
-}
-a:visited {
-	color: #FF0000;
-	text-decoration: none;
-}
-a:hover {
-	color: #FF0000;
-	text-decoration: none;
-}
-a:active {
-	color: #CC0000;
-	text-decoration: none;
-}
--->
-</style>
-</head>
+<meta http-equiv="content-type" content="text/html" />
 
+<title>PHPlorer</title>
+<link href="css/phplorer.css" rel="stylesheet" />
+
+</head>
 <body>
-<h2 align="center"><b>SiteMapper</b></h2>
+<h2 align="center"><b>PHPlorer</b></h2>
 <blockquote>
 <p>
 <img src="images/folder-open-grey.gif" width="27" height="22"> - Top-level folder, cannot navigate further up<br>
