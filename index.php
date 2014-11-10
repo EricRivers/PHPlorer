@@ -1,5 +1,7 @@
 <?PHP
 
+require_once('classes/class.phplorer.php');
+
 function scanFolder($folder) {
 	$folders = array();
 	$files = array();
