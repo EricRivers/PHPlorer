@@ -56,12 +56,12 @@ $dirObj = new PHPlorer;
 (isset($_GET['newDir'])) ? $folder = $_GET['newDir'] : $folder = '..';
 
 $dirObj->scanFolder($folder);
-$folders = $dirObj->scanFolder($folder)[0];
-$files = $dirObj->scanFolder($folder)[1];
+/* $folders = $dirObj->scanFolder($folder)[0]; */
+/* $files = $dirObj->scanFolder($folder)[1]; */
 
 displayCurrentFolder($folder);
-displaySortedFolders($folders,$folder);	
-displaySortedFiles($files,$folder);
+displaySortedFolders(($dirObj->scanFolder($folder)[0]),$folder);	
+displaySortedFiles(($dirObj->scanFolder($folder)[0]),$folder);
 
 ?>
 </blockquote>
