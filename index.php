@@ -51,13 +51,13 @@ function displaySortedFiles($files,$folder) {
 </p>
 <?PHP
 
-$dir = new PHPlorer;
+$dirObj = new PHPlorer;
 
 (isset($_GET['newDir'])) ? $folder = $_GET['newDir'] : $folder = '..';
 
-$dir->scanFolder($folder);
-$folders = $dir->scanFolder($folder)[0];
-$files = $dir->scanFolder($folder)[1];
+$dirObj->scanFolder($folder);
+$folders = $dirObj->scanFolder($folder)[0];
+$files = $dirObj->scanFolder($folder)[1];
 
 displayCurrentFolder($folder);
 displaySortedFolders($folders,$folder);	
