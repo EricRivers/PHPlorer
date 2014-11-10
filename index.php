@@ -1,7 +1,7 @@
 <?PHP
 
 require_once('classes/class.phplorer.php');
-
+/* 
 function scanFolder($folder) {
 	$folders = array();
 	$files = array();
@@ -23,7 +23,7 @@ function scanFolder($folder) {
 	displaySortedFiles($files,$folder);
 	
 }
-
+ */
 function displayCurrentFolder($folder) {
 	if ($folder == "..") {
 		echo "<b>Current folder: ../public_html</b><br><br>\n";
@@ -78,17 +78,15 @@ $dir = new PHPlorer;
 if (isset($_GET['newDir']))
 {
 	$folder = $_GET['newDir'];
-	$dir->scanFolder($_GET['newDir']);
-	$folders = $dir->scanFolder($_GET['newDir'])[0];
-	$files = $dir->scanFolder($_GET['newDir'])[1];
 }
 else
 {
 	$folder = '..';
-	$dir->scanFolder('..');
-	$folders = $dir->scanFolder('..')[0];
-	$files = $dir->scanFolder('..')[1];
 }
+
+$dir->scanFolder($folder);
+$folders = $dir->scanFolder($folder)[0];
+$files = $dir->scanFolder($folder)[1];
 
 displayCurrentFolder($folder);
 displaySortedFolders($folders,$folder);	
