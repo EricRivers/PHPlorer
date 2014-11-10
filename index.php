@@ -53,14 +53,7 @@ function displaySortedFiles($files,$folder) {
 
 $dir = new PHPlorer;
 
-if (isset($_GET['newDir']))
-{
-	$folder = $_GET['newDir'];
-}
-else
-{
-	$folder = '..';
-}
+(isset($_GET['newDir'])) ? $folder = $_GET['newDir'] : $folder = '..';
 
 $dir->scanFolder($folder);
 $folders = $dir->scanFolder($folder)[0];
