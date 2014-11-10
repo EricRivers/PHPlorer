@@ -72,12 +72,34 @@ function displaySortedFiles($files,$folder) {
 <img src="images/folder-closed.gif" width="20" height="22"> - Child folder, click to navigate down
 </p>
 <?PHP
-if (isset($_GET['newDir'])) {
+
+$dir = new PHPlorer;
+
+if (isset($_GET['newDir']))
+{
+	$folder = $_GET['newDir'];
+	$dir->scanFolder($_GET['newDir']);
+	$folders = $dir->scanFolder($_GET['newDir'])[0];
+	$files = $dir->scanFolder($_GET['newDir'])[1];
+}
+else
+{
+	$folder = '..';
+	$dir->scanFolder('..');
+	$folders = $dir->scanFolder('..')[0];
+	$files = $dir->scanFolder('..')[1];
+}
+
+displayCurrentFolder($folder);
+displaySortedFolders($folders,$folder);	
+displaySortedFiles($files,$folder);
+
+/* if (isset($_GET['newDir'])) {
 	scanFolder($_GET['newDir']);
 } else {
 	scanFolder("..");
 }
-?>
+ */?>
 </blockquote>
 </body>
 </html>
