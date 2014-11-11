@@ -4,7 +4,8 @@ require_once('classes/class.phplorer.php');
 
 function displayCurrentFolder($folder) {
 	if ($folder == "..") {
-		echo "<b>Current folder: ../public_html</b><br><br>\n";
+		// echo "<b>Current folder: ../public_html</b><br><br>\n";
+        echo "<b>Current folder: ..".dirname(urldecode($_SERVER['PHP_SELF']))."</b><br><br>\n";
 		echo "<img src=\"images/folder-open-grey.gif\"><b>../</b><br>\n";
 	} else {
 		$readable = str_replace("..", "../public_html", dirname(urldecode($folder)));
@@ -52,7 +53,8 @@ function displaySortedFiles($files,$folder) {
 <?PHP
 
 $dirObj = new PHPlorer;
-(isset($_GET['newDir'])) ? $folder = $_GET['newDir'] : $folder = '..';
+//(isset($_GET['newDir'])) ? $folder = $_GET['newDir'] : $folder = '..';
+(isset($_GET['newDir'])) ? $folder = $_GET['newDir'] : $folder = '..'.dirname(urldecode($_SERVER['PHP_SELF']));
 $dirObj->scanFolder($folder);
 
 displayCurrentFolder($folder);
