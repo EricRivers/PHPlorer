@@ -2,6 +2,7 @@
 
 class PHPlorer
 {
+
 	public function scanFolder($folder)
 	{
 		$folders = array();
@@ -24,6 +25,7 @@ class PHPlorer
 		$foldersfiles = array($folders,$files);
 		return $foldersfiles;
 	}
+
 }
 
 ?>
